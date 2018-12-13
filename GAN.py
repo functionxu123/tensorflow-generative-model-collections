@@ -49,7 +49,7 @@ class GAN(object):
         # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)
         # Architecture : (64)4c2s-(128)4c2s_BL-FC1024_BL-FC1_S
         with tf.variable_scope("discriminator", reuse=reuse):
-
+            #con2d :input_, output_dim, k_h=5, k_w=5, d_h=2, d_w=2,
             net = lrelu(conv2d(x, 64, 4, 4, 2, 2, name='d_conv1'))
             net = lrelu(bn(conv2d(net, 128, 4, 4, 2, 2, name='d_conv2'), is_training=is_training, scope='d_bn2'))
             net = tf.reshape(net, [self.batch_size, -1])

@@ -28,7 +28,7 @@ class GAN(object):
             self.output_width = 28
 
             self.z_dim = z_dim         # dimension of noise-vector
-            self.c_dim = 1
+            self.c_dim = 1  #img channel, 3 or 1
 
             # train
             self.learning_rate = 0.0002
@@ -97,7 +97,7 @@ class GAN(object):
 
         # get loss for discriminator
         d_loss_real = tf.reduce_mean(
-            tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones_like(D_real)))
+            tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones_like(D_real)))#tf.ones_like(D_real):返回一个shape和D_real一样，但元素全是1的tensor
         d_loss_fake = tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.zeros_like(D_fake)))
 

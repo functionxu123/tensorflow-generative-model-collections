@@ -29,7 +29,7 @@ def parse_args():
 
     parser.add_argument('--gan_type', type=str, default='GAN',
                         choices=['GAN', 'CGAN', 'infoGAN', 'ACGAN', 'EBGAN', 'BEGAN', 'WGAN', 'WGAN_GP', 'DRAGAN', 'LSGAN', 'VAE', 'CVAE'],
-                        help='The type of GAN', required=True)
+                        help='The type of GAN')
     parser.add_argument('--dataset', type=str, default='mnist', choices=['mnist', 'fashion-mnist', 'celebA'],
                         help='The name of dataset')
     parser.add_argument('--epoch', type=int, default=20, help='The number of epochs to run')

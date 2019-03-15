@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
+encoding/CGAN.py=utf-8
 encoding/GAN.py=utf-8
+encoding/LSGAN.py=utf-8
+encoding/WGAN.py=utf-8
 encoding/infoGAN.py=utf-8
